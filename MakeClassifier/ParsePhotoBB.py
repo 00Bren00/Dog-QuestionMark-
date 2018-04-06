@@ -18,6 +18,8 @@ def parse_photo_rgb(filePath):
 def parse_photo_BW(filePath):
     im = Image.open(filePath)
 
+    im.save(filePath, optimize=True,quality=95)
+
     pixels = list(im.getdata())
 
     myList = []
