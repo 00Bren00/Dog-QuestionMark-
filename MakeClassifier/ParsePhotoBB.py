@@ -1,7 +1,15 @@
 from PIL import Image
 
-im = Image.open('image.gif')
-rgb_im = im.convert('RGB')
-r, g, b = rgb_im.getpixel((1, 1))
 
-print(r, g, b)
+def parse_photo_rgb(filePath):
+    im = Image.open(filePath)
+
+    pixels = list(im.getdata())
+
+    myList = []
+
+    for pixel in pixels:
+        for value in pixel:
+            myList.append(value)
+
+    return myList
