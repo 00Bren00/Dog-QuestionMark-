@@ -22,7 +22,12 @@ def parse_photo_BW(filePath):
 
     myList = []
 
+    pixelNum = 0
     for pixel in pixels:
+        pixelNum += 1
+        if not ((pixelNum %4) == 0):
+            continue
+
         total = 0
         for value in pixel:
             total += value
