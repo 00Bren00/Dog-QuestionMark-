@@ -18,8 +18,6 @@ def parse_photo_rgb(filePath):
 def parse_photo_BW(filePath):
     im = Image.open(filePath)
 
-    im.save(filePath, optimize=True,quality=95)
-
     pixels = list(im.getdata())
 
     myList = []
@@ -34,3 +32,8 @@ def parse_photo_BW(filePath):
         myList.append(total)
 
     return myList
+
+def change_resolution(filePath, newfilePath):
+    im = Image.open(filePath)
+
+    im.save(newfilePath, optimize=True,quality=95)
